@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM02LAB2EJ1.Views.Detalles"
+             Title="Detalles de la Firma" BackgroundColor="{AppThemeBinding Light=#b4fff0, Dark=Black}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HorizontalOptions="FillAndExpand" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="210"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+                <Label Text="Firma digital: " FontFamily="Poppins Bold" FontSize="18"></Label>
+                <Image x:Name="imgSignature" Grid.Row="1" Grid.Column="0" HeightRequest="200" WidthRequest="200" Margin="2" VerticalOptions="Start" HorizontalOptions="Center"/>
+
+                <Label Text="Información sobre el elemento: " Grid.Row="2" Grid.Column="0" HorizontalOptions="Center"></Label>
+
+                <Label x:Name="lblnombre" FontFamily="Poppins" Grid.Row="3" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20,0"/>
+
+                <Label x:Name="lbldescripcion" FontFamily="Poppins" Grid.Row="4" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Padding="20,0" />
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

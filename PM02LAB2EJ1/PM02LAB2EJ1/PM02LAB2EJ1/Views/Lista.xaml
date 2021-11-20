@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM02LAB2EJ1.Views.Lista"
+             Title="Lista de Firmas" BackgroundColor="{AppThemeBinding Light=#01a29a, Dark=#121212}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Deslice hacia la izquierda sobre una caja de texto para ver detalles:" TextColor="{AppThemeBinding Light=Black, Dark=White}" Margin="20"/>
+            <ListView x:Name="lstfirmas"  HasUnevenRows="True" SeparatorVisibility="None" ItemTapped="lstfirmas_ItemTapped"  ItemSelected="lstfirmas_ItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10" >
+                                <Frame CornerRadius="10" HasShadow="True" BackgroundColor="{AppThemeBinding Light=#b4fff0, Dark=Black}">
+
+                                    <SwipeView BackgroundColor="{AppThemeBinding Light=#b4fff0, Dark=Black}">
+                                        <SwipeView.RightItems>
+                                            <SwipeItem  Text="Visualizar"
+                                                        BackgroundColor="Blue"
+                                                        Invoked="VerDetalles" 
+                                                       />
+                                        </SwipeView.RightItems>
+
+                                        <StackLayout HorizontalOptions="Center" BackgroundColor="{AppThemeBinding Light=#b4fff0, Dark=Black}">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="150"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Text="Código:" Grid.Row="0" Grid.Column="0" FontFamily="Poppins Bold" FontAttributes="Bold" FontSize="16" />
+                                                <Label Text="{Binding codigo}" Grid.Row="0" Grid.Column="1" FontFamily="Poppins Italic" FontAttributes="Italic" />
+
+                                                <Label Text="Nombre: " Grid.Row="1" Grid.Column="0" FontFamily="Poppins Bold" FontAttributes="Bold"  FontSize="16" />
+                                                <Label Text="{Binding nombre}" Grid.Row="1" Grid.Column="1" FontFamily="Poppins Italic" FontAttributes="Italic" />
+
+                                                <Label Text="Descripción: " Grid.Row="2" Grid.Column="0" FontFamily="Poppins Bold" FontAttributes="Bold" FontSize="16" />
+                                                <Label Text="{Binding descripcion}" Grid.Row="2" Grid.Column="1" FontFamily="Poppins Italic" FontAttributes="Italic" />
+                                            </Grid>
+                                        </StackLayout>
+                                    </SwipeView>
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

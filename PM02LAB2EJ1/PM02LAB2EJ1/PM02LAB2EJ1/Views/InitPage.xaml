@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:signature="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             x:Class="PM02LAB2EJ1.Views.InitPage"
+             Title="Firmas Digitales" BackgroundColor="{AppThemeBinding Light=#f5fffd, Dark=Black}">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+                <Label Text="Dibuje la firma en el espacio de abajo: " FontFamily="Poppins Italic" FontSize="18"/>
+                <signature:SignaturePadView x:Name="signature" HorizontalOptions="FillAndExpand" StrokeColor="Blue" 
+                    VerticalOptions="StartAndExpand" HeightRequest="300" MinimumHeightRequest="300" />
+
+                <Entry Placeholder="Ingrese el Nombre" x:Name="txtNombre" FontFamily="Poppins" />
+                <Entry Placeholder="Ingrese la Descripción" x:Name="txtDescripcion" FontFamily="Poppins" />
+
+                <Button x:Name="btnSubmit" Text="Guardar firma" HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="Start" Visual="Material" Clicked="BtnSubmit_Clicked" FontFamily="Poppins" CornerRadius="5" />
+                <Button x:Name="btnlist" Text="Ver firmas" Clicked="btnlist_Clicked" FontFamily="Poppins" CornerRadius="5" />
+
+                <Label Text="2021, Christian Alvarado" TextColor="Gray" HorizontalOptions="Center"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
